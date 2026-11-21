@@ -2,18 +2,21 @@ package spring_day.books;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class BookRepository {
-    private final List<Book> books=new ArrayList<>();
+    private final Map<Integer,Book> books=new LinkedHashMap<>();
     public  List<Book> getBooks() {
-        return books;
+        return new ArrayList<>(books.values());
     }
-     public void addBook(Book book) {
-         books.add(book);
+     public Book addBook(Book book) {
+         books.put(book.getId(), book);
+         return book;
+     }
+
+     public Book getById(int id) {
+        return books.get(id);
      }
 
 }

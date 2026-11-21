@@ -11,8 +11,12 @@ public class BookController {
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
+    @GetMapping("/{id}")
+    public BookResponse getBooksById(@PathVariable int id) {
+        return  bookService.getBookById(id);
+    }
 @GetMapping
-public List<BookResponse> getBooks( String author) {
+public List<BookResponse> getBooks(@RequestParam(required = false) String author) {
         return bookService.getAll(author);
 }
     @PostMapping

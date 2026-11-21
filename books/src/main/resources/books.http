@@ -1,0 +1,38 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Война и Мир",
+  "author": "Лев Толстой"
+}
+
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+"title": "Белый клык",
+"author": "Джек Лондон"
+}
+
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Оно",
+  "author": "Стивен Кинг"
+}
+###
+GET http://localhost:8080/api/books
+
+###
+GET http://localhost:8080/api/books?author=Лев Толстой
+
+###
+GET http://localhost:8080/api/books/2
